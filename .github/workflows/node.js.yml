@@ -34,7 +34,7 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        key: ${{ secrets.SSH_KEY }}
         source: "./api-bundle.tar.gz"
         target: "/home/me/app/my-app/"
 
@@ -43,7 +43,7 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST }}
         user: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        key: ${{ secrets.SSH_KEY }}
         command: |
           pm2 stop MyApp
           tar -xzf /home/me/app/my-app/api-bundle.tar.gz -C /home/me/app/my-app/
